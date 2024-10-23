@@ -1,0 +1,48 @@
+.banner {
+  position: relative;
+  padding-top: 56.25%;
+  &:after {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.centerAlign {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  @extend .centerAlign;
+  img {
+    width: 100%;
+  }
+}
+
+.content {
+  @extend .centerAlign;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  z-index: 1;
+  text-align: center;
+  h2 {
+    display: flex;
+    font-size: 3.5rem;
+    color: #fff;
+    line-height: 4.5rem;
+    max-width: 70%;
+  }
+}

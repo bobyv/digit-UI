@@ -1,0 +1,59 @@
+@import 'components/common/MagicBricksProperty/base.scss';
+
+.container {
+  margin: 1rem 0;
+}
+
+.show-hide {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.button-text {
+  color: rgba(0, 0, 0, 1);
+  @include font-size(18);
+  font-weight: 700;
+  line-height: 30px;
+  text-decoration: underline;
+}
+
+.button-edit {
+  &,
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.show-hide .arrow-down::after,
+.show-hide .arrow-up::after {
+  content: '';
+  display: inline-block;
+  margin-left: 10px;
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  padding: 7px;
+  transition: all ease 0.5s;
+}
+
+.arrow-down::after {
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.arrow-up::after {
+  transform: rotate(-135deg);
+  margin-bottom: -8px;
+}
+
+.content {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.disabled,
+:disabled {
+  opacity: 0.6;
+}

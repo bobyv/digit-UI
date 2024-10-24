@@ -1,0 +1,23 @@
+.box-default {
+  background: var(--bgGray);
+  padding: 20px;
+  width: 100%;
+}
+
+.black-layout {
+  background-color: var(--photobgcolor);
+}
+
+.black-layout-photo-gallery {
+  background-color: #1b1d29;
+}
+
+.light-black-layout {
+  background-color: #212121;
+}
+
+@media (max-width: 767px) {
+  .box-default {
+    padding: 15px;
+  }
+}

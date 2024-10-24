@@ -1,0 +1,128 @@
+.d-flex {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.default {
+  &[class*='slick-slider'] {
+    width: 100%;
+
+    &,
+    [class*='slick-list'] {
+      position: relative;
+      display: block;
+    }
+
+    [class*='slick-list'],
+    [class*='slick-track'] {
+      transform: translateZ(0);
+      overflow: hidden;
+    }
+
+    [class*='slick-track'] {
+      display: flex;
+    }
+
+    [class*='slick-arrow'] {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    [class*='slick-next'],
+    [class*='slick-prev'] {
+      height: 100%;
+      width: 30px;
+      font-size: 0;
+      top: 50%;
+      transform: translateY(-50%) !important;
+      z-index: 2;
+
+      &::before {
+        width: 30px;
+        border-radius: 0px;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 14%,
+          var(--bgWhite) 99%
+        );
+        opacity: 1;
+      }
+
+      &::after {
+        content: '';
+        font-size: 0;
+        position: absolute;
+        left: 0px;
+        top: 0;
+        bottom: 0;
+        width: 30px;
+        background: url('/assets/icons/svg/arrow-right.svg') right 50% !important;
+        background-size: 30px !important;
+        background-repeat: no-repeat !important;
+      }
+    }
+
+    [class*='slick-next'] {
+      right: 0;
+    }
+
+    [class*='slick-prev'] {
+      left: 0;
+      transform: translateY(-50%) rotate(180deg) !important;
+    }
+
+    [class*='slick-disabled'],
+    [class*='slick-next']:disabled {
+      opacity: 0.6;
+    }
+  }
+}
+
+.gap-20 {
+  &[class*='slick-slider'] {
+    [class*='slick-list'] {
+      margin: 0 -10px;
+    }
+
+    [class*='slick-slide'] {
+      padding: 0 10px;
+    }
+  }
+}
+
+.button__bar {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  margin-top: 12px;
+
+  li {
+    list-style: none;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 3px;
+    padding: 0;
+
+    button {
+      border: none;
+      background: rgba(var(--rgbWhiteColor), 1);
+      color: transparent;
+      cursor: pointer;
+      display: block;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+    }
+
+    &[class*='slick-active'] {
+      button {
+        background: rgba(var(--rgbDarkCreamColor), 1);
+      }
+    }
+  }
+}

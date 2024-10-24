@@ -4,10 +4,16 @@ import SectionWidget from "../components/common/SectionWidget/SectionWidget";
 import ProfileCard from "../components/common/ProfileCard/ProfileCard";
 import CommonGridBox from "../components/common/WrapperComponents/CommonGridBox/CommonGridBox";
 // import '../styles/global.css'
+import ServiceProvider from "../components/Common/ServiceProvider/ServiceProvider";
+import ContainerBox from "../components/Common/WrapperComponents/ContainerBox/ContainerBox";
 export default function Home() {
   return (
     <>
       <Banner />
+
+      <ContainerBox>
+        <ServiceProvider />
+      </ContainerBox>
       <div className={styles.container}>
         <SectionWidget
           titleConfig={{

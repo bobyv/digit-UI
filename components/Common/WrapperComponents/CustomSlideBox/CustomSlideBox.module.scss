@@ -1,0 +1,152 @@
+@mixin child-width($width, $value, $element) {
+  @if $width == 'fixed' {
+    .overflow {
+      display: grid;
+
+      @if $value ==1 {
+        grid-template-columns: 1fr;
+      } @else {
+        grid-template-columns: repeat(#{$value}, 1fr);
+      }
+
+      > #{$element} {
+        white-space: normal;
+      }
+    }
+  } @else {
+    .overflow {
+      > #{$element} {
+        flex: 0 0 calc(100% - #{$value}px);
+        width: calc(100% - #{$value}px);
+        white-space: normal;
+      }
+    }
+  }
+}
+
+.overflow {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  list-style: none;
+  width: 100%;
+
+  > a,
+  > button,
+  > div,
+  > section,
+  li {
+    scroll-snap-align: start;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.default {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .col-3 {
+    @include child-width(fixed, 3, div);
+  }
+
+  .col-4 {
+    @include child-width(fixed, 4, div);
+  }
+
+  .col-5 {
+    @include child-width(fixed, 5, li);
+  }
+}
+
+@media (max-width: 767px) {
+  .default {
+    margin: 0 -15px;
+
+    .overflow {
+      padding: 0 15px;
+
+      > a,
+      > button,
+      > div,
+      > section,
+      li {
+        scroll-snap-align: center;
+      }
+    }
+  }
+
+  .width-100-35 {
+    @include child-width('', 35, div);
+
+    .overflow {
+      > div {
+        padding: 0;
+      }
+    }
+  }
+  .width-100-60 {
+    @include child-width('', 60, div);
+  }
+
+  .width-100-120 {
+    @include child-width('', 120, a);
+    @include child-width('', 120, figure);
+    @include child-width('', 120, li);
+
+    .overflow {
+      > a {
+        padding: 0;
+      }
+    }
+  }
+
+  .width-100-195 {
+    @include child-width('', 195, div);
+  }
+
+  .col-3 {
+    @include child-width('', 70, div);
+    @include child-width('', 70, li);
+  }
+
+  .col-4 {
+    @include child-width('', 70, div);
+  }
+
+  .col-5 {
+    @include child-width('', 160, li);
+  }
+
+  .content-wrap {
+    .overflow {
+      > a {
+        white-space: normal;
+      }
+    }
+  }
+
+  .movie-review {
+    @include child-width('', 15, section);
+
+    .overflow {
+      > section {
+        > div {
+          padding: 0;
+          border: 0;
+        }
+      }
+    }
+
+    h5 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}

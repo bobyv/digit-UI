@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import style from './SlickWrapper.module.scss';
-import { _isCSR } from 'utils/common';
+// import { _isCSR } from 'utils/common';
 
 function SlickWrapper({
   children,
@@ -33,12 +33,12 @@ function SlickWrapper({
   const [paddingStyle, setPaddingStyle] = useState(0);
 
   useEffect(() => {
-    slickeWidthHandler();
+    // slickeWidthHandler();
     const scrollHandler = () => {
       let scrollCount = scrollTriggred + 1;
       setScroll(scrollCount);
       if (scrollTriggred <= 1) {
-        slickeWidthHandler();
+        // slickeWidthHandler();
       }
     };
     if (typeof window !== 'undefined') {
@@ -49,24 +49,24 @@ function SlickWrapper({
     };
   }, []);
 
-  const slickeWidthHandler = () => {
-    if (_isCSR() && typeof window != 'undefined') {
-      let slickContainerWidth = document.querySelector(
-        `#${slideId} .slick-list`,
-      )?.offsetWidth;
-      let slickSlide = document.querySelectorAll(`#${slideId} .slick-slide`);
-      let width = 0;
-      for (var i = 0; i < slickSlide.length; i++) {
-        width += slickSlide && slickSlide.length && slickSlide[i]?.offsetWidth;
-        if (width > slickContainerWidth) {
-          setSlickSlider(true);
-          setChildCount(i);
-          setPaddingStyle(1);
-          return;
-        }
-      }
-    }
-  };
+  // const slickeWidthHandler = () => {
+  //   if (_isCSR() && typeof window != 'undefined') {
+  //     let slickContainerWidth = document.querySelector(
+  //       `#${slideId} .slick-list`,
+  //     )?.offsetWidth;
+  //     let slickSlide = document.querySelectorAll(`#${slideId} .slick-slide`);
+  //     let width = 0;
+  //     for (var i = 0; i < slickSlide.length; i++) {
+  //       width += slickSlide && slickSlide.length && slickSlide[i]?.offsetWidth;
+  //       if (width > slickContainerWidth) {
+  //         setSlickSlider(true);
+  //         setChildCount(i);
+  //         setPaddingStyle(1);
+  //         return;
+  //       }
+  //     }
+  //   }
+  // };
 
   const settings = {
     slidesToShow: slickSlider ? childCount - 1 : 20,

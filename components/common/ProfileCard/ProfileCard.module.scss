@@ -1,0 +1,21 @@
+@import './../../../styles/mixins';
+
+.profileCard {
+  text-align: center;
+}
+.small {
+  max-width: 120px;
+}
+.image {
+  padding: 0;
+  margin: 0 0 10px;
+  img {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+
+  }
+  figcaption {
+    @include font-size(14)
+  }
+ }

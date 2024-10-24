@@ -1,12 +1,31 @@
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import Banner from "../components/desktop/Banner/Banner";
+import SectionWidget from "../components/common/SectionWidget/SectionWidget";
+import ProfileCard from "../components/common/ProfileCard/ProfileCard";
+import CommonGridBox from "../components/common/WrapperComponents/CommonGridBox/CommonGridBox";
+// import '../styles/global.css'
 export default function Home() {
   return (
     <>
       <Banner />
       <div className={styles.container}>
-        
+        <SectionWidget
+          titleConfig={{
+            titleText: "Latest Movies",
+            viewMore: "view more",
+          }}
+        ></SectionWidget>
 
+<CommonGridBox>
+        <ProfileCard size={'small'} />
+        <ProfileCard size={'small'} />
+        <ProfileCard size={'small'} />
+        <ProfileCard size={'small'} />
+        <ProfileCard size={'small'} />
+        <ProfileCard size={'small'} />
+        <ProfileCard size={'small'} />
+        <ProfileCard size={'small'} />
+        </CommonGridBox>
         <style jsx>{`
           main {
             // padding: 5rem 0;

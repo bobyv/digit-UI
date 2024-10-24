@@ -1,0 +1,119 @@
+// must add this to every component
+@import './../../../../styles/mixins';
+// @import './../../../../styles/variables';
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewMore { 
+  background: #F0F0F0;
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    line-height: 1.15rem;
+    color: #606060;
+    margin-right: 5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.title-box {
+  position: relative;
+  width: 100%;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.default-title {
+  --lineHeightBody: 1.5;
+  --textColor: #000;
+  @include font-size(20);
+  line-height: var(--lineHeightBody);
+  font-weight: bold;
+  color: var(--textColor);
+  padding-bottom: 10px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+  margin: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  &::before {
+    width: 41px;
+    height: 3px;
+    z-index: 1;
+    bottom: 1px;
+    background-color: #FF0600;
+  }
+
+  &::after {
+    opacity: 0.5;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    border-bottom: 1px solid #E3E3E3;
+  }
+}
+
+.title-withoutunderline {
+  @extend .default-title;
+  @include font-size(22);
+  padding-bottom: 0px;
+  &::before,
+  &::after {
+    display: none;
+  }
+}
+
+.title-16-withoutunderline {
+  @extend .default-title;
+  @include font-size(16);
+  padding-bottom: 0px;
+  &::before,
+  &::after {
+    display: none;
+  }
+}
+
+.title-font-size-26 {
+  @include font-size(26);
+  font-weight: Bold;
+}
+
+.title-16 {
+  @include font-size(16);
+}
+
+.white {
+  color: var(--white-color);
+
+  &::before {
+    background-color: var(--white-color);
+  }
+}
+
+.left-red-border {
+  padding-left: 14px;
+  line-height: normal;
+
+  &::before {
+    background: #b52025;
+    height: calc(100% - 8px);
+    width: 6px;
+    top: 0;
+  }
+
+  &::after {
+    border-bottom-style: dotted;
+  }
+}

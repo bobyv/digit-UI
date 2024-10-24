@@ -4,8 +4,10 @@ import SectionWidget from "../components/common/SectionWidget/SectionWidget";
 import ProfileCard from "../components/common/ProfileCard/ProfileCard";
 import CommonGridBox from "../components/common/WrapperComponents/CommonGridBox/CommonGridBox";
 // import '../styles/global.css'
-import ServiceProvider from "../components/Common/ServiceProvider/ServiceProvider";
-import ContainerBox from "../components/Common/WrapperComponents/ContainerBox/ContainerBox";
+import ServiceProvider from "../components/common/ServiceProvider/ServiceProvider";
+import Filter from "../components/common/Filter/Filter";
+import ImageCard from "../components/common/ImageCard/ImageCard";
+import ContainerBox from "../components/common/WrapperComponents/ContainerBox/ContainerBox";
 export default function Home() {
   return (
     <>
@@ -13,6 +15,7 @@ export default function Home() {
 
       <ContainerBox>
         <ServiceProvider />
+        <ImageCard />
       </ContainerBox>
       <div className={styles.container}>
         <SectionWidget
@@ -22,15 +25,15 @@ export default function Home() {
           }}
         ></SectionWidget>
 
-<CommonGridBox>
-        <ProfileCard size={'small'} />
-        <ProfileCard size={'small'} />
-        <ProfileCard size={'small'} />
-        <ProfileCard size={'small'} />
-        <ProfileCard size={'small'} />
-        <ProfileCard size={'small'} />
-        <ProfileCard size={'small'} />
-        <ProfileCard size={'small'} />
+        <CommonGridBox>
+          <ProfileCard size={"small"} />
+          <ProfileCard size={"small"} />
+          <ProfileCard size={"small"} />
+          <ProfileCard size={"small"} />
+          <ProfileCard size={"small"} />
+          <ProfileCard size={"small"} />
+          <ProfileCard size={"small"} />
+          <ProfileCard size={"small"} />
         </CommonGridBox>
         <style jsx>{`
           main {

@@ -1,0 +1,9 @@
+@import "styles/mixins";
+.tab {
+  cursor: pointer;
+  text-transform: uppercase;
+  @include font-size(16);
+  &.active {
+    color: #ff0600;
+  }
+}

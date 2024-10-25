@@ -3,38 +3,86 @@ import Banner from "../components/desktop/Banner/Banner";
 import SectionWidget from "../components/common/SectionWidget/SectionWidget";
 import ProfileCard from "../components/common/ProfileCard/ProfileCard";
 import CommonGridBox from "../components/common/WrapperComponents/CommonGridBox/CommonGridBox";
-// import '../styles/global.css'
-import ServiceProvider from "../components/common/ServiceProvider/ServiceProvider";
-import Filter from "../components/common/Filter/Filter";
-import ImageCard from "../components/common/ImageCard/ImageCard";
 import ContainerBox from "../components/common/WrapperComponents/ContainerBox/ContainerBox";
+import TitleComponent from "../components/common/WidgetCards/TitleComponent/TitleComponent";
+import TrendingCard from "../components/common/TrendingCard/TrendingCard";
 export default function Home() {
   return (
     <>
       <Banner />
 
       <ContainerBox>
-        <ServiceProvider />
-        <ImageCard />
-      </ContainerBox>
-      <div className={styles.container}>
+        <SectionWidget
+          titleConfig={{
+            titleText: "STREAMING PROVIDERS",
+            viewMore: "view more",
+          }}
+          dataConfig={{
+            streamingData: true,
+          }}
+        ></SectionWidget>
         <SectionWidget
           titleConfig={{
             titleText: "Latest Movies",
             viewMore: "view more",
+            switchBtn: true,
+          }}
+          dataConfig={{
+            sliderData: true,
+            tabsData: true,
           }}
         ></SectionWidget>
-
-        <CommonGridBox>
-          <ProfileCard size={"small"} />
-          <ProfileCard size={"small"} />
-          <ProfileCard size={"small"} />
-          <ProfileCard size={"small"} />
-          <ProfileCard size={"small"} />
-          <ProfileCard size={"small"} />
-          <ProfileCard size={"small"} />
-          <ProfileCard size={"small"} />
+        <SectionWidget
+          titleConfig={{
+            titleText: "Popular Actors and directors",
+            viewMore: "view more",
+            switchBtn: true,
+          }}
+          dataConfig={{
+            profileData: true,
+          }}
+        ></SectionWidget>
+        <SectionWidget
+          titleConfig={{
+            titleText: "LANGUAGES",
+          }}
+          dataConfig={{
+            sliderData: true,
+            overlay: true,
+          }}
+        ></SectionWidget>
+        <SectionWidget
+          titleConfig={{
+            titleText: "Trailers",
+          }}
+          dataConfig={{
+            sliderData: true,
+            isVideo: true,
+          }}
+        ></SectionWidget>
+        <CommonGridBox gridType="divGridBox" changeStyle="grid-2" inLineStyle={{ gap: '0 40px'}}>
+          <div>
+            <TitleComponent titleText="Top 10 Trending Movies" />
+            <CommonGridBox gridType="divGridBox" changeStyle="grid-2" inLineStyle={{ gap: '20px 25px'}}>
+              <TrendingCard />
+              <TrendingCard />
+              <TrendingCard />
+              <TrendingCard />
+            </CommonGridBox>
+          </div>
+          <div>
+            <TitleComponent titleText="Top 10 Trending Shows" />
+            <CommonGridBox gridType="divGridBox" changeStyle="grid-2" inLineStyle={{ gap: '15px 25px'}}>
+              <TrendingCard />
+              <TrendingCard />
+              <TrendingCard />
+              <TrendingCard />
+            </CommonGridBox>
+          </div>
         </CommonGridBox>
+      </ContainerBox>
+
+      <div className={styles.container}>
         <style jsx>{`
           main {
             // padding: 5rem 0;
@@ -77,12 +125,21 @@ export default function Home() {
           body {
             padding: 0;
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-              sans-serif;
+            font-family: "Verdana", sans-serif;
           }
           * {
             box-sizing: border-box;
+          }
+
+          a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.5s;
+          }
+
+          img {
+            max-width: 100%;
+            height: auto;
           }
         `}</style>
       </div>

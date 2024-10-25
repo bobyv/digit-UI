@@ -1,0 +1,51 @@
+@import "styles/mixins";
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding: 0 10px 15px 0;
+  border-bottom: 1px solid #ccc;
+  * {
+    transition: all .3s;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    width: 6px;
+    height: 6px;
+    right: 0;
+    transform: rotate(-45deg);
+  }
+  &:hover {
+    border-bottom-color: #000;
+    .rank {
+      color: #000;
+    }
+    .title {
+      color: #e30500;
+    }
+    &:after {
+      border-color: #e30500;
+    }
+  }
+}
+.image {
+  max-width: 53px;
+  // aspect-ratio: 9/16;
+  margin: 0;
+  img {
+    border-radius: 8px;
+  }
+}
+
+.rank {
+  color: #e30500;
+}
+
+.title {
+  @include font-size(16);
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Filter.module.scss";
 import CommonGridBox from "../WrapperComponents/CommonGridBox/CommonGridBox";
-function ServiceProvider() {
+function Filter() {
   return (
     <>
       <CommonGridBox
@@ -220,4 +220,4 @@ function ServiceProvider() {
   );
 }
 
-export default ServiceProvider;
+export default Filter;

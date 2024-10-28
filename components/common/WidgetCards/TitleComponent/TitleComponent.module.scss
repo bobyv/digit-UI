@@ -19,7 +19,18 @@
     text-decoration: none;
     text-transform: uppercase;
 }
-
+ 
+.noborder {
+  > div {
+    display: block;
+    text-align: center;
+  }
+  h2 {
+    &:after, &:before {
+      display: none;
+    }
+  }
+}
 .title-box {
   position: relative;
   width: 100%;

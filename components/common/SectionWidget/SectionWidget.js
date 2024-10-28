@@ -46,7 +46,7 @@ export default function SectionWidget({ titleConfig, dataConfig }) {
           changeStyle={"flex-start"}
           inLineStyle={{ margin: "0 0 20px", gap: "15px" }}
         >
-          <Tabs tabText="hindi" />
+          <Tabs tabText="hindi" activeClass={true} />
           <Tabs tabText="telugu" />
           <Tabs tabText="tamil" />
           <Tabs tabText="bengali" />
@@ -110,6 +110,7 @@ export default function SectionWidget({ titleConfig, dataConfig }) {
       )}
       {/* {console.log('!dataConfig?.slider', !dataConfig?.slider)} */}
       {dataConfig?.sliderData && !dataConfig?.slider && (
+        <>
         <CommonGridBox
         gridType={"divGridBox"}
         changeStyle={"grid-3"}
@@ -123,8 +124,13 @@ export default function SectionWidget({ titleConfig, dataConfig }) {
           <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
           <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
           <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
+          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
           
         </CommonGridBox>
+        <div>
+          <button className={styles.moreBtn}>Load More </button>
+        </div>
+        </>
       )}
     </div>
   );

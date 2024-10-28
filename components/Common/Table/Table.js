@@ -4,11 +4,13 @@ import CommonGridBox from "../WrapperComponents/CommonGridBox/CommonGridBox";
 function Table() {
   return (
     <table className={style.table}>
+      <thead>
       <tr>
         <th>Title </th>
         <th>Genre</th>
         <th>Release Year</th>
       </tr>
+      </thead>
       <tbody>
         <tr>
           <td>The Legend of Maula Jatt</td>

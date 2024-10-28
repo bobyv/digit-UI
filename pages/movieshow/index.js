@@ -8,7 +8,7 @@ import TitleComponent from "../../components/common/WidgetCards/TitleComponent/T
 import TrendingCard from "../../components/common/TrendingCard/TrendingCard";
 import Filter from "../../components/common/Filter/Filter";
 import Table from "../../components/common/Table/Table";
-import LeadImage from "../../components/Common/LeadImage/LeadImage";
+import LeadImage from "../../components/common/LeadImage/LeadImage";
 export default function Home() {
   return (
     <>

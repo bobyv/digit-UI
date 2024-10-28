@@ -19,8 +19,9 @@ export default function SectionWidget({ titleConfig, dataConfig }) {
         <TitleComponent
           titleText={titleConfig?.titleText}
           viewMore={titleConfig?.viewMore}
-          changeStyle="default-title"
+          changeStyle={titleConfig?.changeStyle || "default-title"}
           switchBtn={titleConfig?.switchBtn}
+          titleType={titleConfig?.titleType}
         />
       )}
 
@@ -57,8 +58,8 @@ export default function SectionWidget({ titleConfig, dataConfig }) {
 
       {dataConfig?.profileData && (
         <SlickWrapper
-          slidesToShow={8}
-          slidesToScroll={2}
+          slidesToShow={dataConfig?.slidesToShow || 4}
+          slidesToScroll={dataConfig.slidesToScroll || 2}
           changeSliderStyle={"gap-20"}
         >
           <ProfileCard />
@@ -83,53 +84,148 @@ export default function SectionWidget({ titleConfig, dataConfig }) {
           slidesToScroll={2}
           changeSliderStyle={"gap-20"}
         >
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
+          <ImageCard
+            isOverlay={dataConfig?.overlay}
+            isVideo={dataConfig?.isVideo}
+          />
         </SlickWrapper>
       )}
       {/* {console.log('!dataConfig?.slider', !dataConfig?.slider)} */}
       {dataConfig?.sliderData && !dataConfig?.slider && (
         <>
-        <CommonGridBox
-        gridType={"divGridBox"}
-        changeStyle={"grid-3"}
-        inLineStyle={{ gridGap: `20px 24px`, marginBottom: "38px" }}
-        >
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          <ImageCard isOverlay={dataConfig?.overlay} isVideo={dataConfig?.isVideo} />
-          
-        </CommonGridBox>
-        <div>
-          <button className={styles.moreBtn}>Load More </button>
-        </div>
+          <CommonGridBox
+            gridType={"divGridBox"}
+            changeStyle={"grid-3"}
+            inLineStyle={{ gridGap: `20px 24px`, marginBottom: "38px" }}
+          >
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+            <ImageCard
+              isOverlay={dataConfig?.overlay}
+              isVideo={dataConfig?.isVideo}
+            />
+          </CommonGridBox>
+          <div>
+            <button className={styles.moreBtn}>Load More </button>
+          </div>
         </>
       )}
     </div>

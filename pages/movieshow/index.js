@@ -9,53 +9,235 @@ import TrendingCard from "../../components/common/TrendingCard/TrendingCard";
 import Filter from "../../components/common/Filter/Filter";
 import Table from "../../components/common/Table/Table";
 import LeadImage from "../../components/common/LeadImage/LeadImage";
+import SongCard from "../../components/common/SongCard/SongCard";
 export default function Home() {
   return (
     <>
       <LeadImage />
 
       <ContainerBox>
-        <TitleComponent
-          titleText="Best Movies List"
-          changeStyle="noborder"
-          inLineStyle={{ textCenter: "center" }}
-        />
         <CommonGridBox inLineStyle={{ gap: "0 30px" }}>
-          <div className={style.lhs}>
+          <div className={`${style.lhs} ${style.movieContent}`}>
             <div className={style.moviedetails}>
               <div className={style.col}>
-              <h2>The Legend of Maula Jatt Movie (2022)</h2>
-            <div className={style.category}>
-              <a href="#">Action</a>
-              <a href="#">Drama</a>
-              <a href="#">Fantasy</a>
-            </div>
-            <div className={style.details}>
-              <a href="#">Punjabi</a>| 2 hr 33 min | Release Date Oct 12, 2022
-            </div>
+                <h2 className={style.mainheading}>
+                  The Legend of Maula Jatt Movie (2022)
+                </h2>
+                <div className={style.category}>
+                  <a href="#" className={style.linkItem}>
+                    Action
+                  </a>
+                  <a href="#" className={style.linkItem}>
+                    Drama
+                  </a>
+                  <a href="#" className={style.linkItem}>
+                    Fantasy
+                  </a>
+                </div>
+                <div className={style.details}>
+                  <a href="#" className={style.linkItem}>
+                    Punjabi
+                  </a>
+                  <span className={style.movieText}>2 hr 33 min</span>
+                  <span className={style.movieText}>
+                    Release Date Oct 12, 2022
+                  </span>
+                </div>
+                <hr />
               </div>
               <div className={style.col}></div>
             </div>
-            
+
             <div className={style.highlight}>
               The Legend of Maula Jatt : Release Date, Trailer, Cast & Songs
             </div>
             <Table />
-          </div>
-          <div className={style.rhs}>
+            <hr />
+            <h3>Where to Watch / Stream The Legend of Maula Jatt Online</h3>
+            <p>
+              Theatrical release - Not available on any OTT Platform right now.
+            </p>
+            <hr />
             <SectionWidget
+              titleConfig={{
+                titleText: "The Legend of Maula Jatt - Star Cast And Crew",
+                changeStyle: "noborder",
+              }}
               dataConfig={{
-                sliderData: true,
-                tabsData: true,
+                profileData: true,
+                slidesToShow: 4,
+                slidesToScroll: 4,
               }}
             ></SectionWidget>
+
+            <h3>The Legend of Maula Jatt All Songs List</h3>
+
+            <div>
+              <SongCard />
+              <SongCard />
+            </div>
+            <hr />
+            <h3>The Legend of Maula Jatt Trailer</h3>
+            <div className={style.trailer}>
+              <img
+                src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928802.jpg?tr=w-500 480w,https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928802.jpg"
+                alt="image"
+              />
+              <span className={style.playIcon} />
+            </div>
+            <hr />
+            <h3>Image Gallery</h3>
+            <ul className={style.imageGallery}>
+              <li>
+                <a href="#">
+                  <img
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928803.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 1"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-942346.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-942346.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 2"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="lzy_img"
+                    onclick="currentSlide(3)"
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928800.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928800.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 3"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-942346.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-942346.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 2"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="lzy_img"
+                    onclick="currentSlide(3)"
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928800.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928800.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 3"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-942346.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-942346.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 2"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="lzy_img"
+                    onclick="currentSlide(3)"
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928800.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928800.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 3"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="lzy_img"
+                    onclick="currentSlide(4)"
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928799.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928799.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 4"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="lzy_img"
+                    onclick="currentSlide(5)"
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928798.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928798.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 5"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="lzy_img"
+                    onclick="currentSlide(6)"
+                    src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928805.jpg?tr=w-130"
+                    data-src="https://static.digit.in/OTT/v2/images/the-legend-of-maula-jatt-928805.jpg?tr=w-130"
+                    alt="The Legend of Maula Jatt Poster 6"
+                  />
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <div className={style.disclaimer}>
+              <strong>Disclaimer</strong>: All content and media has been
+              sourced from original content streaming platforms, such as Disney
+              Hotstar, Amazon Prime, Netflix, etc. Digit Binge is an aggregator
+              of content and does not claim any rights on the content. The
+              copyrights of all the content belongs to their respective original
+              owners and streaming service providers. All content has been
+              linked to respective service provider platforms.This product uses
+              the TMDb API but is not endorsed or certified by{" "}
+              <img
+                class="lzy_img dis_tmdb_logo"
+                src="https://static.digit.in/digit_assets/images/blue_long.svg"
+                data-src="https://static.digit.in/digit_assets/images/blue_long.svg"
+                width="160"
+                height="13"
+                alt="TMDB Logo"
+              />
+            </div>
+            <div className={style.telegramBtn}>
+              <a className={style.telegram} href="https://t.me/digit_binge">
+                <img
+                  class="lzy_img"
+                  src="https://static.digit.in/digit_assets/images/telegram.svg"
+                  data-src="https://static.digit.in/digit_assets/images/telegram.svg"
+                  alt="Telegram Logo"
+                  width="24"
+                  height="21"
+                />
+                <span>Join The Digit Binge Telegram Channel Now!</span>
+              </a>
+              <p>
+                For all queries and suggestions, email us at{" "}
+                <a href="mailto:digitbinge@9dot9.in">digitbinge@9dot9.in</a>
+              </p>
+            </div>
+          </div>
+          <div className={style.rhs}>
+          <TitleComponent titleText="Top 10 Trending Movies" />
+          <TrendingCard changeStyle={'withoutRanking'} />
+          <TrendingCard changeStyle={'withoutRanking'} />
+          <TrendingCard changeStyle={'withoutRanking'} />
+          <TrendingCard changeStyle={'withoutRanking'} />
+          <TrendingCard changeStyle={'withoutRanking'} />
           </div>
         </CommonGridBox>
 
-        <div>
-          <TitleComponent titleText="Top 10 Movies List" />
-          <Table></Table>
-        </div>
+        
 
         <SectionWidget
           titleConfig={{
@@ -69,27 +251,7 @@ export default function Home() {
             tabsData: true,
           }}
         ></SectionWidget>
-        <SectionWidget
-          titleConfig={{
-            titleText: "Popular Actors and directors",
-            viewMore: "view more",
-            switchBtn: true,
-          }}
-          dataConfig={{
-            profileData: true,
-            slider: true,
-          }}
-        ></SectionWidget>
-        <SectionWidget
-          titleConfig={{
-            titleText: "Movies IN ALL GENRE",
-          }}
-          dataConfig={{
-            sliderData: true,
-            slider: true,
-            overlay: true,
-          }}
-        ></SectionWidget>
+        
       </ContainerBox>
 
       <div className={style.container}>

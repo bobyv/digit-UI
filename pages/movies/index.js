@@ -15,7 +15,7 @@ export default function Home() {
         <TitleComponent
           titleText="Best Movies List"
           changeStyle="noborder"
-          inLineStyle={{ textCenter: "center" }}
+          inLineStyle={{ textAlign: "center" }}
         />
         <CommonGridBox 
         inLineStyle={{ gap: '0 30px'}}

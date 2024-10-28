@@ -18,6 +18,7 @@ function TitleComponent(props) {
     isLeftRedBorder,
     viewMore,
     switchBtn,
+    inLineStyle,
   } = props;
   return (
     <>
@@ -28,6 +29,7 @@ function TitleComponent(props) {
         style={{
           marginBottom: `${marginBottom}px`,
           marginTop: `${marginTop}px`,
+          ...inLineStyle
         }}
       >
         <div className={style.flex}>

@@ -10,6 +10,8 @@ import Filter from "../../components/common/Filter/Filter";
 import Table from "../../components/common/Table/Table";
 import LeadImage from "../../components/common/LeadImage/LeadImage";
 import SongCard from "../../components/common/SongCard/SongCard";
+import RatingWidget from "../../components/common/RatingWidget/RatingWidget";
+import SocialSharing from "../../components/common/SocialSharing/SocialSharing";
 export default function Home() {
   return (
     <>
@@ -45,7 +47,10 @@ export default function Home() {
                 </div>
                 <hr />
               </div>
-              <div className={style.col}></div>
+              <div className={style.rightCol}>
+                <RatingWidget />
+                <SocialSharing />
+              </div>
             </div>
 
             <div className={style.highlight}>
@@ -228,16 +233,14 @@ export default function Home() {
             </div>
           </div>
           <div className={style.rhs}>
-          <TitleComponent titleText="Top 10 Trending Movies" />
-          <TrendingCard changeStyle={'withoutRanking'} />
-          <TrendingCard changeStyle={'withoutRanking'} />
-          <TrendingCard changeStyle={'withoutRanking'} />
-          <TrendingCard changeStyle={'withoutRanking'} />
-          <TrendingCard changeStyle={'withoutRanking'} />
+            <TitleComponent titleText="Top 10 Trending Movies" />
+            <TrendingCard changeStyle={"withoutRanking"} />
+            <TrendingCard changeStyle={"withoutRanking"} />
+            <TrendingCard changeStyle={"withoutRanking"} />
+            <TrendingCard changeStyle={"withoutRanking"} />
+            <TrendingCard changeStyle={"withoutRanking"} />
           </div>
         </CommonGridBox>
-
-        
 
         <SectionWidget
           titleConfig={{
@@ -251,7 +254,6 @@ export default function Home() {
             tabsData: true,
           }}
         ></SectionWidget>
-        
       </ContainerBox>
 
       <div className={style.container}>

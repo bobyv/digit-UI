@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./ImageCard.module.scss";
+import RatingWidget from "../RatingWidget/RatingWidget";
 function ImageCard({ isOverlay = false, isVideo = false }) {
   return (
       <div
@@ -12,19 +13,7 @@ function ImageCard({ isOverlay = false, isVideo = false }) {
               src="https://static.digit.in/OTT/v2/images/khel-khel-mein-1490065.jpg"
               alt=""
             />
-            <div className={style["ratinglist"]}>
-              <strong
-                className={`${style["rating"]} ${style["progessbar-60"]}`}
-              >
-                7.8
-              </strong>
-              <span className={style["ratingimg"]}>
-                <img
-                  src="https://static.digit.in/digit_assets/images/db_rating.jpg"
-                  alt=""
-                />
-              </span>
-            </div>
+            <RatingWidget changeStyle={'imageCard'} />
             {isOverlay && <h3 className={style.title}>English</h3>}
             {isVideo && <span className={style.videoIcon} />}
           </div>

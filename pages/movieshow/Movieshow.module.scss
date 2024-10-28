@@ -23,6 +23,14 @@
   }
 }
 
+.moviedetails {
+  display: flex;
+  .rightCol {
+    flex: 0 0 100px;
+    width: 100px;
+  }
+}
+
 .mainheading {
   width: 100%;
   display: inline-flex;

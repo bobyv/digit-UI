@@ -5,19 +5,20 @@
   grid-template-columns: repeat(auto-fill, 230px);
 }
 
-
 .videoIcon {
-  background: url('https://static.digit.in/digit_assets/images/video_play_sm.svg') no-repeat;
+  background: url("https://static.digit.in/digit_assets/images/video_play_sm.svg")
+    no-repeat;
   width: 34px;
   height: 34px;
   border-radius: 50%;
   position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .imagecard {
   position: relative;
+  text-align: left;
   &.overlay {
     .image-holder {
       position: relative;
@@ -100,5 +101,3 @@
     color: #e30500;
   }
 }
-
-

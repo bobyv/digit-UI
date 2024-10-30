@@ -1,0 +1,13 @@
+@import "styles/mixins";
+
+.card {
+  display: grid;
+  grid-template-columns: 405px 1fr;
+  gap: 15px;
+  
+}
+
+.videosList {
+  max-height: 200px;
+  overflow: auto;
+}

@@ -1,4 +1,4 @@
-import style from "./Movieshow.module.scss";
+import style from "./webshow.module.scss";
 import Banner from "../../components/desktop/Banner/Banner";
 import SectionWidget from "../../components/common/SectionWidget/SectionWidget";
 import ProfileCard from "../../components/common/ProfileCard/ProfileCard";
@@ -12,6 +12,12 @@ import LeadImage from "../../components/common/LeadImage/LeadImage";
 import SongCard from "../../components/common/SongCard/SongCard";
 import RatingCard from "../../components/common/RatingCard/RatingCard";
 import SocialSharing from "../../components/common/SocialSharing/SocialSharing";
+import OTTPlatform from "../../components/common/OTTPlatform/OTTPlatform";
+import RatingWidget from "../../components/common/RatingWidget/RatingWidget";
+import VideosWidget from "../../components/common/VideosWidget/VideosWidget";
+import DialogueWidget from "../../components/common/DialogueWidget/DialogueWidget";
+import AwardsWidget from "../../components/common/AwardsWidget/AwardsWidget";
+import EpisodeCard from "../../components/common/EpisodeCard/EpisodeCard";
 export default function Home() {
   return (
     <>
@@ -58,10 +64,10 @@ export default function Home() {
             </div>
             <Table />
             <hr />
-            <h3>Where to Watch / Stream The Legend of Maula Jatt Online</h3>
-            <p>
-              Theatrical release - Not available on any OTT Platform right now.
-            </p>
+            <h3>Where to Watch / Stream Ghar Waapsi Online</h3>
+
+            <OTTPlatform />
+
             <hr />
             <SectionWidget
               titleConfig={{
@@ -75,7 +81,48 @@ export default function Home() {
               }}
             ></SectionWidget>
 
+            <hr />
+
+            <h3>Rating</h3>
+
+            <RatingWidget />
+
+            <hr />
+
+            <h3>Mirzapur Trailer and Promotional Videos</h3>
+
+            <VideosWidget />
+            <hr />
+
+            <h3>Popular Dialogues</h3>
+
+            <DialogueWidget />
+
+            <hr />
+
+            <h3>Movie Awards and Nomination</h3>
+
+            <AwardsWidget />
+            <hr />
+
+            <div className={style.flexbox}>
+              <h3>The Legend of Maula Jatt All Songs List</h3>
+              <div className={style.select}>
+                <select>
+                  <option>Season 1</option>
+                  <option>Season 2</option>
+                </select>
+              </div>
+            </div>
+
+            <div className={style.episodeList}>
+              <EpisodeCard />
+              <EpisodeCard />
+            </div>
+            <hr />
+
             <h3>The Legend of Maula Jatt All Songs List</h3>
+
 
             <div>
               <SongCard />

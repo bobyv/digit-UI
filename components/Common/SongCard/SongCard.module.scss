@@ -1,0 +1,62 @@
+@import "styles/mixins";
+
+.songCard {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e3e3e3;
+
+  &:hover {
+    color: #ff0600;
+    .play {
+      border-color: #ff0600;
+      &:after {
+        color: #ff0600;
+      }
+    }
+    .first {
+      background: #ff0600;
+    }
+  }
+  + .songCard {
+    margin-top: 15px;
+  }
+}
+
+.sl {
+  flex: 0 0 15px;
+  width: 15px;
+  font-weight: 500;
+}
+.song,
+.singer {
+  flex: 1;
+}
+.first {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #707070;
+}
+.play {
+  width: 34px;
+  height: 34px;
+  background: #fff;
+  border-radius: 5rem;
+  border: 1px solid #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:after {
+    content: "\25BC";
+    font-size: 0.95rem;
+    color: #a7a9ac;
+    transform: rotateZ(-90deg);
+  }
+}

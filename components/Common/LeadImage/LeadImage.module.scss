@@ -1,0 +1,10 @@
+@import "styles/mixins";
+
+.image {
+  margin-bottom: 32px;
+  max-height: 600px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}

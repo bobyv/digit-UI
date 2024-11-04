@@ -6,6 +6,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include mobile {
+    display: block;
+  }
 }
 
 .viewMore { 
@@ -19,7 +22,17 @@
     text-decoration: none;
     text-transform: uppercase;
 }
-
+ 
+.noborder {
+  > div {
+    display: block;
+  }
+  h2 {
+    &:after, &:before {
+      display: none;
+    }
+  }
+}
 .title-box {
   position: relative;
   width: 100%;

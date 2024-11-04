@@ -1,0 +1,164 @@
+.lhs {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+}
+.rhs {
+  flex: 0 0 300px;
+  width: 300px;
+}
+
+.movieContent {
+  margin-bottom: 50px;
+  hr {
+    margin: 25px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+  a {
+    color: #ad1e00;
+  }
+}
+
+.moviedetails {
+  display: flex;
+  .rightCol {
+    flex: 0 0 100px;
+    width: 100px;
+  }
+}
+
+.mainheading {
+  width: 100%;
+  display: inline-flex;
+  color: #000;
+  font-size: 2.05rem;
+  line-height: 2.75rem;
+  padding-right: 0.5rem;
+}
+
+.linkItem {
+  display: inline-block;
+  font-weight: 500;
+  color: #ad1e00;
+  font-size: 16px;
+  line-height: 1;
+  + .linkItem {
+    border-left: 2px solid #000;
+    margin-left: 6px;
+    padding-left: 6px;
+  }
+}
+
+.category,
+.details {
+  margin-bottom: 10px;
+}
+
+.movieText {
+  @extend .linkItem;
+  color: #000;
+}
+
+.highlight {
+  background: #f0f0f0;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin-bottom: 26px;
+}
+
+.trailer {
+  position: relative;
+  max-height: 400px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+  .playIcon {
+    background: url(https://static.digit.in/digit_assets/images/video_play_sm.svg)
+      no-repeat;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+}
+
+.imageGallery {
+  list-style: none;
+  overflow: auto;
+  display: flex;
+  padding: 0 0 10px;
+  gap: 10px;
+  li {
+    flex: 0 0 124px;
+    width: 124px;
+    max-height: 119px;
+    overflow: hidden;
+  }
+  img {
+    min-height: 119px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: #ccc;
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #6a6a6a;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 2px;
+    background-color: #ccc;
+  }
+}
+
+.disclaimer {
+  margin-bottom: 25px;
+}
+
+.telegramBtn {
+  .telegram {
+    background: #0074ad;
+    font-size: 0.85rem;
+    padding: 0 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    height: 50px;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 0 11px 18px rgb(2 154 228 / 40%);
+    margin-bottom: 1rem;
+  }
+  img {
+    margin-right: 8px;
+  }
+  span {
+    position: relative;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    margin-left: 1rem;
+    &:before {
+      content: "";
+      border-left: 1px solid #000;
+      height: 50px;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: -11px;
+    }
+  }
+}

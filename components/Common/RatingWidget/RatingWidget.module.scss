@@ -1,0 +1,39 @@
+@import "styles/mixins";
+.card {
+  display: grid;
+  grid-template-columns: 20% 20% 35%;
+  gap: 10px;
+}
+
+.col {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem 1rem 0.65rem;
+  text-align: center;
+  h6 {
+    margin: 0 0 10px;
+    font-size: 14px;
+  }
+  p {
+    font-size: 12px;
+    color: #707070;
+  }
+}
+
+.starRating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 1.5em;
+  justify-content: center;
+  margin-top: 1.25rem;
+  input {
+    display: none;
+  }
+  label {
+    color: #ccc;
+    cursor: pointer;
+  }
+  :checked~label, label:hover, label:hover ~ label {
+    color: #fc0;
+  }
+}

@@ -32,6 +32,23 @@
       border-color: #e30500;
     }
   }
+  &.withoutRanking {
+    align-items: flex-start;
+    + .withoutRanking {
+      margin-top: 15px;
+    }
+    &:after {
+      display: none;
+    }
+    .image {
+      flex: 0 0 100px;
+      width: 100px;
+      max-width: 100%;
+    }
+  }
+  h4 {
+    margin: 5px 0 10px;
+  }
 }
 .image {
   max-width: 53px;
@@ -41,9 +58,16 @@
     border-radius: 8px;
   }
 }
-
+.content {
+  text-align: left;
+}
 .rank {
   color: #e30500;
+}
+
+.category {
+  color: #e30500;
+  margin: 0
 }
 
 .title {

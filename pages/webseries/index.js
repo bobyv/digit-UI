@@ -1,28 +1,41 @@
-import styles from "../styles/Home.module.scss";
-import Banner from "../components/desktop/Banner/Banner";
-import SectionWidget from "../components/common/SectionWidget/SectionWidget";
-import ProfileCard from "../components/common/ProfileCard/ProfileCard";
-import CommonGridBox from "../components/common/WrapperComponents/CommonGridBox/CommonGridBox";
-import ContainerBox from "../components/common/WrapperComponents/ContainerBox/ContainerBox";
-import TitleComponent from "../components/common/WidgetCards/TitleComponent/TitleComponent";
-import TrendingCard from "../components/common/TrendingCard/TrendingCard";
+import style from "./webseries.module.scss";
+import Banner from "../../components/desktop/Banner/Banner";
+import SectionWidget from "../../components/common/SectionWidget/SectionWidget";
+import ProfileCard from "../../components/common/ProfileCard/ProfileCard";
+import CommonGridBox from "../../components/common/WrapperComponents/CommonGridBox/CommonGridBox";
+import ContainerBox from "../../components/common/WrapperComponents/ContainerBox/ContainerBox";
+import TitleComponent from "../../components/common/WidgetCards/TitleComponent/TitleComponent";
+import TrendingCard from "../../components/common/TrendingCard/TrendingCard";
+import Filter from "../../components/common/Filter/Filter";
+import Table from "../../components/common/Table/Table";
 export default function Home() {
   return (
     <>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-      <Banner />
-
       <ContainerBox>
-        <SectionWidget
-          titleConfig={{
-            titleText: "STREAMING PROVIDERS",
-            viewMore: "view more",
-          }}
-          dataConfig={{
-            streamingData: true,
-            slider: true,
-          }}
-        ></SectionWidget>
+        <TitleComponent
+          titleText="Best TV Shows and Web Series List"
+          changeStyle="noborder"
+          inLineStyle={{ textAlign: "center" }}
+        />
+        <CommonGridBox inLineStyle={{ gap: "0 30px" }}>
+          <div className={style.lhs}>
+            <Filter />
+          </div>
+          <div className={style.rhs}>
+            <SectionWidget
+              dataConfig={{
+                sliderData: true,
+                tabsData: true,
+              }}
+            ></SectionWidget>
+          </div>
+        </CommonGridBox>
+
+        <div>
+          <TitleComponent titleText="Top 10 TV Shows and Web Series List" />
+          <Table></Table>
+        </div>
+
         <SectionWidget
           titleConfig={{
             titleText: "Latest Movies",
@@ -43,11 +56,12 @@ export default function Home() {
           }}
           dataConfig={{
             profileData: true,
+            slider: true,
           }}
         ></SectionWidget>
         <SectionWidget
           titleConfig={{
-            titleText: "LANGUAGES",
+            titleText: "Movies IN ALL GENRE",
           }}
           dataConfig={{
             sliderData: true,
@@ -55,39 +69,9 @@ export default function Home() {
             overlay: true,
           }}
         ></SectionWidget>
-        <SectionWidget
-          titleConfig={{
-            titleText: "Trailers",
-          }}
-          dataConfig={{
-            sliderData: true,
-            slider: true,
-            isVideo: true,
-          }}
-        ></SectionWidget>
-        <CommonGridBox gridType="divGridBox" changeStyle="grid-2" inLineStyle={{ gap: '0 40px'}}>
-          <div>
-            <TitleComponent titleText="Top 10 Trending Movies" />
-            <CommonGridBox gridType="divGridBox" changeStyle="grid-2" inLineStyle={{ gap: '20px 25px'}}>
-              <TrendingCard />
-              <TrendingCard />
-              <TrendingCard />
-              <TrendingCard />
-            </CommonGridBox>
-          </div>
-          <div>
-            <TitleComponent titleText="Top 10 Trending Shows" />
-            <CommonGridBox gridType="divGridBox" changeStyle="grid-2" inLineStyle={{ gap: '15px 25px'}}>
-              <TrendingCard />
-              <TrendingCard />
-              <TrendingCard />
-              <TrendingCard />
-            </CommonGridBox>
-          </div>
-        </CommonGridBox>
       </ContainerBox>
 
-      <div className={styles.container}>
+      <div className={style.container}>
         <style jsx>{`
           main {
             // padding: 5rem 0;

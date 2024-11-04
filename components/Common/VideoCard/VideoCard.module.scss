@@ -1,0 +1,38 @@
+@import "styles/mixins";
+
+.card {
+  &:not(.horizontal) {
+    .player {
+      margin-bottom: 10px;
+    }
+  }
+}
+.player {
+  iframe {
+    width: 100%;
+    border-radius: 12px;
+  }
+}
+.content {
+  a {
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    @include lineClamp(3);
+  }
+}
+
+.horizontal {
+  display: grid;
+  grid-template-columns: 126px 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+  iframe {
+    height: 75px;
+  }
+  .content {
+    a {
+      font-size: 0.75rem;
+    }
+  }
+}
